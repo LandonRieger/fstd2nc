@@ -73,7 +73,7 @@ class CCCMixin(BufferBase):
     # Extra info (raw data length and position in file)
     length = raw[:,-4] + 80
     out['length'] = np.array(length,'uint32')
-    out['address'] = np.array(raw.view('>u8')[:,-1],'uint64')
+    out['address'] = np.array(raw.view('>i8')[:,-1],'int64')
     out['dtype'] = np.array([np.float32]*len(raw))
     return out
 
